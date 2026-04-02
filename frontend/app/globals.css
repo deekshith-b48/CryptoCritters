@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --space: #0d0d1a;
+  --space-light: #151528;
+  --magic: #7B61FF;
+  --magic-glow: #9B85FF;
+  --growth: #00F5A8;
+  --rug: #FF4D6A;
+  --warning: #FFB347;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--space);
+  color: white;
+  min-height: 100vh;
+}
+
+.glow-effect {
+  box-shadow: 0 0 30px rgba(123, 97, 255, 0.4);
+}
+
+.gradient-border {
+  background: linear-gradient(135deg, var(--magic) 0%, var(--growth) 100%);
+  padding: 2px;
+  border-radius: 16px;
+}
+
+.stat-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.critter-card {
+  backdrop-filter: blur(10px);
+  background: rgba(21, 21, 40, 0.8);
+}
+
+@keyframes particle {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-100px) scale(0); opacity: 0; }
+}
+
+.particle {
+  animation: particle 1s ease-out forwards;
+}
